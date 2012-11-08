@@ -8,7 +8,7 @@ serve as a Sinatra helper method for the Airbrake Javascript.
 
 Add this line to your application's Gemfile:
 
-    gem 'airbrake-sinatra'
+    gem 'airbrake-sinatra', :require => 'sinatra/airbrake-javascript'
 
 And then execute:
 
@@ -35,6 +35,13 @@ helper in your views. An example layout might look something like this:
   %p
     The Airbrake javascript helper is outputting the following into the header:
     %pre= h airbrake_javascript_sinatra
+```
+
+Note that if you do not use `Bundler.require` with the `gem` line specified in
+the above section you will need to require the gem manually like so:
+
+``` ruby
+require 'sinatra/airbrake-javascript'
 ```
 
 ## Developing
