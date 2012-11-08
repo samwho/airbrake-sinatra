@@ -25,12 +25,24 @@ them under the `examples/` directory. One of them shows how to use this gem with
 a standard Sinatra `server.rb` file. The other shows how to use this gem with
 your own class that extends `Sinatra::Base`. There is a subtle difference :)
 
+Essentially all it boils down to is using the `airbrake_javascript_sinatra`
+helper in your views. An example layout might look something like this:
+
+``` haml
+%head
+  = airbrake_javascript_sinatra
+%body
+  %p
+    The Airbrake javascript helper is outputting the following into the header:
+    %pre= h airbrake_javascript_sinatra
+```
+
 ## Developing
 
 There are two Rake tasks that are there for development purposes:
 
-  $ rake example:one
-  $ rake example:two
+    $ rake example:one
+    $ rake example:two
 
 Both of these cd into the appropriate `example/` directory and execute the
 `shotgun` command.
