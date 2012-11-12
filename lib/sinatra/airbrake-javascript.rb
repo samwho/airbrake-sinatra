@@ -42,7 +42,7 @@ module Sinatra
         :locals        => {
           :host        => host,
           :api_key     => api_key,
-          :js_api_key  => api_key,
+          :js_api_key  => js_api_key,
           :environment => options[:environment] || ENV['RACK_ENV'],
           :url         => url
         }
